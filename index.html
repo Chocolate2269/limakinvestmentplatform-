@@ -1,0 +1,97 @@
+If the downloaded file won't open or shows an error when you double-click it, it is usually because the file was saved incorrectly as a text file instead of a true web page.
+Here is how to open it correctly right now:
+Quick Fix: Create the file manually
+ * Open a blank text document on your computer (using Notepad on Windows or TextEdit on Mac).
+ * Copy the complete code block below.
+ * Paste it into your blank text editor.
+ * Go to File > Save As.
+ * Name the file exactly index.html (make sure the extension is .html, not .txt). If saving on Mac, make sure "If no extension is provided, use .txt" is unchecked.
+ * Double-click your saved index.html file, and it will open smoothly in Google Chrome, Microsoft Edge, or Safari with your live Tawk.to chat widget and interactive deposit buttons ready.
+Copy this code:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limak Investment Platform</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        body { background-color: #0b0f19; color: #f8fafc; padding: 1rem; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .dashboard { width: 100%; max-width: 420px; background: rgba(17, 24, 39, 0.75); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; padding: 1.5rem; box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+        .logo { font-size: 1.15rem; font-weight: 800; color: #38bdf8; letter-spacing: 0.5px; }
+        .status { font-size: 0.75rem; background: rgba(16, 185, 129, 0.15); color: #34d399; padding: 0.25rem 0.6rem; border-radius: 20px; font-weight: 600; border: 1px solid rgba(16, 185, 129, 0.3); }
+        .card { background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 14px; padding: 1.25rem; margin-bottom: 1.25rem; }
+        .card-title { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 0.5rem; font-weight: 600; }
+        .balance { font-size: 2rem; font-weight: 700; color: #fff; }
+        .actions { display: flex; gap: 0.75rem; margin-bottom: 1.25rem; }
+        button { flex: 1; background: linear-gradient(135deg, #0ea5e9, #0284c7); color: white; border: none; padding: 0.8rem; border-radius: 10px; font-weight: 600; cursor: pointer; transition: opacity 0.2s, transform 0.1s; box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3); }
+        button:hover { opacity: 0.9; }
+        button:active { transform: scale(0.98); }
+        .history-title { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.75rem; color: #cbd5e1; }
+        .history-list { list-style: none; max-height: 140px; overflow-y: auto; padding-right: 0.25rem; }
+        .history-list::-webkit-scrollbar { width: 4px; }
+        .history-list::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 4px; }
+        .history-item { display: flex; justify-content: space-between; font-size: 0.85rem; padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .history-item span:first-child { color: #94a3b8; }
+        .history-item span:last-child { color: #34d399; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <div class="header">
+            <div class="logo">LIMAK INVESTMENT</div>
+            <div class="status">● Active</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-title">Portfolio Balance</div>
+            <div class="balance" id="user-balance">$3,450.00</div>
+        </div>
+
+        <div class="actions">
+            <button onclick="simulateDeposit()">Tap Deposit (+$250)</button>
+        </div>
+
+        <div class="history-title">Recent Transactions</div>
+        <ul class="history-list" id="transaction-history">
+            <li class="history-item"><span>Deposit</span><span>+$1,000.00</span></li>
+            <li class="history-item"><span>Investment Return</span><span>+$450.00</span></li>
+        </ul>
+    </div>
+
+    <script>
+        let currentBalance = 3450.00;
+
+        function simulateDeposit() {
+            const depositAmount = 250.00;
+            currentBalance += depositAmount;
+
+            // 1. Update Balance UI immediately
+            document.getElementById('user-balance').textContent = `$${currentBalance.toLocaleString('en-US', {minimumFractionDigits: 2})}`;
+
+            // 2. Prepend to Transaction List UI instantly without refresh
+            const list = document.getElementById('transaction-history');
+            const li = document.createElement('li');
+            li.className = 'history-item';
+            li.innerHTML = `<span>Deposit</span><span>+$${depositAmount.toLocaleString('en-US', {minimumFractionDigits: 2})}</span>`;
+            list.prepend(li);
+        }
+    </script>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/6ac26235e1450734cde21557/1k43kv9jm';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+</body>
+</html>
+
